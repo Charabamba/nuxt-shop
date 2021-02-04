@@ -1,0 +1,13 @@
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0px 10px;
+}
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  .main-content {
+    flex-grow: 1;
+  }
+}
