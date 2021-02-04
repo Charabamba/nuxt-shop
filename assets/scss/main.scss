@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .container {
   max-width: 1600px;
   margin: 0 auto;
@@ -9,5 +12,25 @@
   min-height: 100vh;
   .main-content {
     flex-grow: 1;
+    padding: 40px 0px;
+    background-color: #f2f2f2;
+  }
+}
+body {
+  background-color: #c9c9c9;
+}
+a {
+  display: block;
+}
+
+// button
+.site-button {
+  border: none;
+  padding: 5px 25px;
+  border-radius: 4px;
+  transition: 0.15s;
+  &:hover {
+    color: #f2f2f2;
+    background: #383838;
   }
 }
