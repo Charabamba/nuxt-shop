@@ -1,20 +1,35 @@
 <template>
-  <div class="site-modal">
-    <div class="site-modal__wrapper">
-      <h2>Мы вам перезвоним!</h2>
-      <form>
-        <label>
-          Телефон
-          <input type="text" />
-        </label>
-        <label>
-          Ваше имя
-          <input type="text" />
-        </label>
-      </form>
+  <div class="site-modal" @click="$emit('close')">
+    <div class="site-modal__wrapper" @click.stop="">
+      <div class="site-modal__header">
+        <h2>
+          {{ title }}
+        </h2>
+        <span @click="$emit('close')"> ✕ </span>
+      </div>
+      <slot></slot>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+  },
+
+  mounted() {
+    document.body.addEventListener("keyup", (e) => {
+      if (e.keyCode === 27) {
+        this.$emit("close");
+      }
+    });
+  },
+};
+</script>
 
 <style lang="scss">
 .site-modal {
@@ -30,6 +45,11 @@
     padding: 40px 20px;
     background-color: #ffffff;
     margin: 0 auto;
+  }
+  .site-modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 </style>

@@ -96,11 +96,28 @@
           </li>
         </ul>
         <div>
-          <button class="site-button" @click="showModal = !showModal">
-            Contact
-            {{ showModal }}
-          </button>
-          <modal v-show="showModal" />
+          <button class="site-button" @click="showModal = true">Contact</button>
+          <modal
+            v-show="showModal"
+            @close="showModal = false"
+            @onSubmit="onSubmit"
+            title="Оставьте заявку и мы вам перезвоним!"
+          >
+            <form @submit.prevent="onSubmit">
+              <appInput label="Ваше имя" v-model="message.name" />
+              <appInput
+                label="Email"
+                :isRequired="false"
+                v-model="message.email"
+              />
+              <appTextarea label="Сообщение" v-model="message.text" />
+              <button
+                class="site-button site-button_middle site-button_top-margin"
+              >
+                Отправить
+              </button>
+            </form>
+          </modal>
         </div>
       </nav>
     </div>
@@ -109,12 +126,22 @@
 
 <script>
 import modal from "@/components/Modal.vue";
+import appInput from "@/components/UI/Input.vue";
+import appTextarea from "@/components/UI/Textarea.vue";
+
 export default {
   components: {
     modal,
+    appInput,
+    appTextarea,
   },
   data() {
     return {
+      message: {
+        name: "",
+        email: "",
+        text: "",
+      },
       showModal: false,
       navLinks: [
         {
@@ -141,6 +168,18 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    onSubmit() {
+      // console.log(
+      //   `message is ${this.message.name} ${this.message.email} ${this.message.text}`
+      // );
+      this.message.name = "";
+      this.message.email = "";
+      this.message.text = "";
+
+      this.showModal = false;
+    },
   },
 };
 </script>
