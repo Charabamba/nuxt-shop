@@ -1,4 +1,7 @@
 <template>
-  <div class="container">Главная страница</div>
+  <div class="container">
+    <AppTitle title="Главная страница" />
+    Главная страница
+  </div>
 </template>
 

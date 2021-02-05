@@ -1,3 +1,6 @@
 <template>
-  <div class="container">Страница каталога</div>
+  <div class="container">
+    <AppTitle title="Каталог" />
+    Страница каталога
+  </div>
 </template>
