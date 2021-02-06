@@ -6,6 +6,9 @@
   font-weight: bold;
   margin-bottom: 40px;
 }
+.title_small {
+  font-size: 24px;
+}
 .container {
   max-width: 1600px;
   margin: 0 auto;
@@ -18,7 +21,7 @@
   .main-content {
     flex-grow: 1;
     padding: 40px 0px;
-    background-color: #f2f2f2;
+    background-color: #ffffff;
   }
 }
 body {
@@ -26,6 +29,12 @@ body {
 }
 a {
   display: block;
+  text-decoration: none;
+  color: #000000;
+  transition: 0.15s;
+  &:hover {
+    color: rgb(0, 162, 255);
+  }
 }
 
 // button
@@ -35,9 +44,11 @@ a {
   border-radius: 4px;
   transition: 0.15s;
   display: block;
+  background-color: rgb(0, 162, 255);
+  color: #f2f2f2;
+
   &:hover {
-    color: #f2f2f2;
-    background: #383838;
+    opacity: 0.7;
   }
   &.site-button_middle {
     margin: 0 auto;

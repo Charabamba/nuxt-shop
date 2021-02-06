@@ -61,6 +61,9 @@ export default {
     bottom: 0;
   }
 }
+.slick-dots {
+  bottom: 10px;
+}
 .slick-prev,
 .slick-next {
   height: 30px;

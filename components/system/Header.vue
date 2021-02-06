@@ -202,14 +202,9 @@ export default {
     margin-right: auto;
     a {
       padding: 20px 30px;
-      text-decoration: none;
-      color: #000000;
-      &:hover {
-        text-decoration: underline;
-      }
     }
     .nuxt-link-exact-active {
-      text-decoration: underline;
+      color: rgb(0, 162, 255);
     }
     .site-nav__submenu {
       display: none;

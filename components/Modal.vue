@@ -34,11 +34,12 @@ export default {
 <style lang="scss">
 .site-modal {
   position: absolute;
+  z-index: 1;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(48, 48, 48, 0.301);
+  background-color: rgba(48, 48, 48, 0.699);
   display: flex;
   align-items: center;
   .site-modal__wrapper {
