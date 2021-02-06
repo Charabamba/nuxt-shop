@@ -1,17 +1,15 @@
 <template>
   <div class="container">
     <AppTitle title="Главная страница" />
-    Главная страница
-
-    <slider />
+    <banner />
   </div>
 </template>
 
 <script>
-import slider from "@/components/Slider.vue";
+import banner from "@/components/Banner.vue";
 export default {
   components: {
-    slider,
+    banner,
   },
 };
 </script>
