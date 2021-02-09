@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <product :product="product" />
   </div>
 </template>
@@ -12,7 +12,6 @@ export default {
     product,
   },
   async asyncData(context) {
-    console.log(1);
     let product = await axios.get(
       `https://nuxt-shop-275d6-default-rtdb.europe-west1.firebasedatabase.app/products/${context.params.id}.json`
     );
