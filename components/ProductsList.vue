@@ -12,6 +12,9 @@
         <p>
           {{ product.title }}
         </p>
+        <p>
+          {{ product.announceText }}
+        </p>
         <p>Цена: {{ product.price }}руб</p>
       </nuxt-link>
     </li>
@@ -21,51 +24,11 @@
 
 <script>
 export default {
-  data() {
-    return {
-      productsList: [
-        {
-          id: 1,
-          title: "Товар 1",
-          img: "https://rarog.pro/pictures/product/big/28989_big.jpg",
-          price: "200",
-        },
-        {
-          id: 2,
-          title: "Товар 2",
-          img:
-            "https://static-sl.insales.ru/images/products/1/2975/321538975/кроссовки-бутекс-скиф-олива1.jpg",
-          price: "300",
-        },
-        {
-          id: 3,
-          title: "Товар 3",
-          img:
-            "https://спецодежда-стиль.рф/wp-content/uploads/2018/09/Kobra-m.12031.jpg",
-          price: "400",
-        },
-        {
-          id: 4,
-          title: "Товар 4",
-          img: "https://rarog.pro/pictures/product/big/28989_big.jpg",
-          price: "200",
-        },
-        {
-          id: 5,
-          title: "Товар 5",
-          img:
-            "https://static-sl.insales.ru/images/products/1/2975/321538975/кроссовки-бутекс-скиф-олива1.jpg",
-          price: "300",
-        },
-        {
-          id: 6,
-          title: "Товар 6",
-          img:
-            "https://спецодежда-стиль.рф/wp-content/uploads/2018/09/Kobra-m.12031.jpg",
-          price: "400",
-        },
-      ],
-    };
+  props: {
+    productsList: {
+      type: Array,
+      required: true,
+    },
   },
 };
 </script>
