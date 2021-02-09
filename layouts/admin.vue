@@ -24,26 +24,12 @@ export default {
     return {
       navLinks: [
         {
-          title: "Главная",
-          url: "/",
-        },
-        {
           title: "Список товаров",
           url: "/admin/products-list/",
-          // sublinks: [
-          //   {
-          //     title: "Подпункт 1",
-          //     url: "/catalog/category1",
-          //   },
-          //   {
-          //     title: "Подпункт 2",
-          //     url: "/catalog/category2",
-          //   },
-          // ],
         },
         {
-          title: "Контакты",
-          url: "/contacts/",
+          title: "Добавить товар",
+          url: "/admin/add-product/",
         },
       ],
     };
