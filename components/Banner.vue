@@ -61,11 +61,11 @@ export default {
     bottom: 0;
   }
 }
-.slick-dots {
+.site-banner .slick-dots {
   bottom: 10px;
 }
-.slick-prev,
-.slick-next {
+.site-banner .slick-prev,
+.site-banner .slick-next {
   height: 30px;
   width: 30px;
   opacity: 0.1;

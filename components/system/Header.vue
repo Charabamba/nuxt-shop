@@ -95,7 +95,7 @@
             </ul>
           </li>
         </ul>
-        <div>
+        <div v-if="!hideModal">
           <button class="site-button" @click="showModal = true">Contact</button>
           <modal
             v-show="showModal"
@@ -135,6 +135,15 @@ export default {
     appInput,
     appTextarea,
   },
+  props: {
+    hideModal: {
+      type: Boolean,
+      default: false,
+    },
+    navLinks: {
+      type: Array,
+    },
+  },
   data() {
     return {
       message: {
@@ -143,30 +152,34 @@ export default {
         text: "",
       },
       showModal: false,
-      navLinks: [
-        {
-          title: "Главная",
-          url: "/",
-        },
-        {
-          title: "Каталог",
-          url: "/catalog/",
-          sublinks: [
-            {
-              title: "Подпункт 1",
-              url: "/catalog/category1",
-            },
-            {
-              title: "Подпункт 2",
-              url: "/catalog/category2",
-            },
-          ],
-        },
-        {
-          title: "Контакты",
-          url: "/contacts/",
-        },
-      ],
+      // navLinks: [
+      //   {
+      //     title: "Главная",
+      //     url: "/",
+      //   },
+      //   {
+      //     title: "Каталог",
+      //     url: "/catalog/",
+      //     // sublinks: [
+      //     //   {
+      //     //     title: "Подпункт 1",
+      //     //     url: "/catalog/category1",
+      //     //   },
+      //     //   {
+      //     //     title: "Подпункт 2",
+      //     //     url: "/catalog/category2",
+      //     //   },
+      //     // ],
+      //   },
+      //   {
+      //     title: "Контакты",
+      //     url: "/contacts/",
+      //   },
+      //   {
+      //     title: "Админка",
+      //     url: "/admin/",
+      //   },
+      // ],
     };
   },
   methods: {

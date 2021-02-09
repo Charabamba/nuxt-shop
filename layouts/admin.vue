@@ -1,6 +1,8 @@
 <template>
   <div class="site-wrapper">
-    <Header :navLinks="navLinks" />
+    <Header :navLinks="navLinks" :hideModal="true" />
+
+    <AppTitle title="Админка" />
     <div class="main-content">
       <Nuxt />
     </div>
@@ -17,6 +19,7 @@ export default {
     Header,
     Footer,
   },
+  // middleware: ["auth"],
   data() {
     return {
       navLinks: [
@@ -25,8 +28,8 @@ export default {
           url: "/",
         },
         {
-          title: "Каталог",
-          url: "/catalog/",
+          title: "Список товаров",
+          url: "/admin/products-list/",
           // sublinks: [
           //   {
           //     title: "Подпункт 1",
@@ -41,10 +44,6 @@ export default {
         {
           title: "Контакты",
           url: "/contacts/",
-        },
-        {
-          title: "Админка",
-          url: "/admin/",
         },
       ],
     };
