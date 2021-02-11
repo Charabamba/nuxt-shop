@@ -139,6 +139,7 @@ export default {
     modal,
     appInput,
     appTextarea,
+    burger,
   },
   props: {
     hideModal: {

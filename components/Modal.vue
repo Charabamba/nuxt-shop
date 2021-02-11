@@ -33,7 +33,7 @@ export default {
 
 <style lang="scss">
 .site-modal {
-  position: absolute;
+  position: fixed;
   z-index: 1;
   top: 0;
   bottom: 0;
