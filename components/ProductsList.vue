@@ -5,29 +5,27 @@
       :key="product.title"
       class="product__item"
     >
-      <nuxt-link :to="/catalog/ + product.id">
-        <div class="product__image-wrapper">
-          <img :src="product.img" :alt="product.title" />
-        </div>
-        <p>
-          {{ product.title }}
-        </p>
-        <p>
-          {{ product.announceText }}
-        </p>
-        <p>Цена: {{ product.price }}руб</p>
-      </nuxt-link>
+      <productPreview :product="product" :admin="admin" />
     </li>
   </ul>
 </template>
 
 
 <script>
+import productPreview from "@/components/ProductPreview.vue";
+
 export default {
+  components: {
+    productPreview,
+  },
   props: {
     productsList: {
       type: Array,
       required: true,
+    },
+    admin: {
+      type: Boolean,
+      default: false,
     },
   },
 };

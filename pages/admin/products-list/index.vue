@@ -5,7 +5,7 @@
       <tr>
         <th>Наименование</th>
         <th>Цена</th>
-        <th>Картинка</th>
+        <!-- <th>Картинка</th> -->
         <th>Краткое описание</th>
         <th>Полное описание</th>
       </tr>
@@ -16,9 +16,9 @@
         <td>
           {{ product.price }}
         </td>
-        <td>
+        <!-- <td>
           {{ product.img }}
-        </td>
+        </td> -->
         <td>
           {{ product.announceText }}
         </td>

@@ -13,6 +13,12 @@ export const mutations = {
   addProduct(state, product) {
     // console.log(product);
     state.productsLoaded.push(product);
+  },
+  editProduct(state, productEdit) {
+    const postIndex = state.productsLoaded.findIndex(
+      post => post.id === productEdit.id
+    );
+    state.productsLoaded[postIndex] = productEdit;
   }
 };
 
@@ -44,6 +50,19 @@ export const actions = {
         commit("addProduct", { ...product, id: res.data.name });
       })
       .catch(e => console.log(e));
+  },
+  editProduct({ commit, state }, product) {
+    return axios
+      .put(
+        `https://nuxt-shop-275d6-default-rtdb.europe-west1.firebasedatabase.app/products/${product.id}.json`,
+        product
+      )
+      .then(res => {
+        commit("editProduct", product);
+      })
+      .catch(e => {
+        console.log(e);
+      });
   }
 };
 
