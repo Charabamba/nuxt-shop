@@ -77,7 +77,10 @@
             />
           </svg>
         </nuxt-link>
-        <ul class="site-nav__list">
+        <ul
+          class="site-nav__list"
+          :class="{ 'site-nav__list_visible': showMenu }"
+        >
           <li
             class="site-nav__item"
             v-for="navLink in navLinks"
@@ -119,6 +122,7 @@
             </form>
           </modal>
         </div>
+        <burger class="burger" @burgerClick="showMenu = !showMenu" />
       </nav>
     </div>
   </header>
@@ -128,6 +132,7 @@
 import modal from "@/components/Modal.vue";
 import appInput from "@/components/UI/Input.vue";
 import appTextarea from "@/components/UI/Textarea.vue";
+import burger from "@/components/UI/Burger.vue";
 
 export default {
   components: {
@@ -152,34 +157,7 @@ export default {
         text: "",
       },
       showModal: false,
-      // navLinks: [
-      //   {
-      //     title: "Главная",
-      //     url: "/",
-      //   },
-      //   {
-      //     title: "Каталог",
-      //     url: "/catalog/",
-      //     // sublinks: [
-      //     //   {
-      //     //     title: "Подпункт 1",
-      //     //     url: "/catalog/category1",
-      //     //   },
-      //     //   {
-      //     //     title: "Подпункт 2",
-      //     //     url: "/catalog/category2",
-      //     //   },
-      //     // ],
-      //   },
-      //   {
-      //     title: "Контакты",
-      //     url: "/contacts/",
-      //   },
-      //   {
-      //     title: "Админка",
-      //     url: "/admin/",
-      //   },
-      // ],
+      showMenu: false,
     };
   },
   methods: {
@@ -201,6 +179,7 @@ export default {
 .site-nav {
   display: flex;
   align-items: center;
+  position: relative;
   .site-logo {
     margin-right: 40px;
     max-width: 50px;
@@ -237,6 +216,31 @@ export default {
     width: 100%;
     a {
       padding: 5px 10px;
+    }
+  }
+
+  .burger {
+    display: none;
+  }
+  @media (max-width: 750px) {
+    .burger {
+      display: block;
+      margin-left: auto;
+    }
+    .site-nav__list {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: -10px;
+      right: -10px;
+      background-color: #c9c9c9;
+      z-index: 1;
+      a {
+        border-bottom: 1px solid #000;
+      }
+    }
+    .site-nav__list_visible {
+      display: block;
     }
   }
 }

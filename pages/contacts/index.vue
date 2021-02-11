@@ -131,4 +131,17 @@ export default {
     max-width: 500px;
   }
 }
+@media (max-width: 1200px) {
+  .contacts {
+    flex-wrap: wrap;
+    .contacts__map {
+      width: 100%;
+      max-width: 100%;
+    }
+    .contacts__text {
+      padding: 10px;
+      margin: 0 auto;
+    }
+  }
+}
 </style>

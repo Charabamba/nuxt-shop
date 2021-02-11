@@ -8,7 +8,7 @@
           nulla neque aliquid sit perferendis unde ullam non excepturi est!
           Recusandae, sed deleniti!
         </p>
-        <p class="footer-info__copyright">Сделано мной</p>
+        <p class="footer-info__copyright">Right text</p>
       </div>
     </div>
   </footer>

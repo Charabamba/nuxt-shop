@@ -15,7 +15,9 @@
       </div>
     </div>
     <div class="container">
-      <nuxt-link to="/catalog/"> Вернуться к каталогу </nuxt-link>
+      <nuxt-link class="back-link" to="/catalog/">
+        Вернуться к каталогу
+      </nuxt-link>
     </div>
   </section>
 </template>
@@ -34,20 +36,21 @@ export default {
 
 <style lang="scss" scoped>
 .product {
-  display: flex;
-
   .product__image-container {
     max-height: 500px;
     max-width: 700px;
-
+    width: 100%;
     img {
       object-fit: contain;
-      // width: 100%;
+      width: 100%;
       height: 100%;
     }
   }
   .product__info {
     max-width: 300px;
   }
+}
+.back-link {
+  margin-top: 40px;
 }
 </style>
