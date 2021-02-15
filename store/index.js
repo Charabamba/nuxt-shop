@@ -2,7 +2,8 @@ import axios from "axios";
 
 // state
 export const state = () => ({
-  productsLoaded: []
+  productsLoaded: [],
+  token: null
 });
 
 // mutations
@@ -19,6 +20,12 @@ export const mutations = {
       post => post.id === productEdit.id
     );
     state.productsLoaded[postIndex] = productEdit;
+  },
+  setToken(state, token) {
+    state.token = token;
+  },
+  destroyToken(state) {
+    state.token = null;
   }
 };
 
@@ -63,6 +70,27 @@ export const actions = {
       .catch(e => {
         console.log(e);
       });
+  },
+  authUser({ commit }, authData) {
+    const key = "AIzaSyA8cf-1b9s9wXlWM5pcNLFFlJzh-dDozw4";
+    return axios
+      .post(
+        `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${key}`,
+        {
+          email: authData.email,
+          password: authData.password,
+          returnSecureToken: true
+        }
+      )
+      .then(res => {
+        commit("setToken", res.data.idToken);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  },
+  logoutUser({ commit }) {
+    commit("destroyToken");
   }
 };
 
@@ -70,5 +98,8 @@ export const actions = {
 export const getters = {
   getProductsLoaded(state) {
     return state.productsLoaded;
+  },
+  checkAuthUser(state) {
+    return state.token != null;
   }
 };

@@ -19,7 +19,7 @@ export default {
     Header,
     Footer,
   },
-  // middleware: ["auth"],
+  middleware: ["auth"],
   data() {
     return {
       navLinks: [
