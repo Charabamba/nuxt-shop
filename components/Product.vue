@@ -36,13 +36,12 @@ export default {
 
 <style lang="scss" scoped>
 .product {
+  display: flex;
+  flex-wrap: wrap;
   .product__image-container {
-    max-height: 500px;
-    max-width: 700px;
-    width: 100%;
+    height: 300px;
     img {
       object-fit: contain;
-      width: 100%;
       height: 100%;
     }
   }
