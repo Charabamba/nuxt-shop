@@ -30,7 +30,9 @@ export default {
       let result =
         this.filter.length > 2
           ? this.$store.getters.getProductsLoaded.filter((product) => {
-              return product.title.includes(this.filter);
+              return product.title
+                .toLowerCase()
+                .includes(this.filter.toLowerCase());
             })
           : this.$store.getters.getProductsLoaded;
 
